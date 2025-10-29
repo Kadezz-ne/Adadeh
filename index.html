@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamaat ya cantikk!</title>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      text-align: center;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      max-width: 400px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      color: #0066ff;
+    }
+
+    p {
+      color: #444;
+      font-size: 16px;
+      margin: 15px 0;
+    }
+
+    button {
+      background-color: #0066ff;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+
+    button:hover {
+      background-color: #3388ff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="judul">Halooo, ultahh yaaaa</h1>
+    <p id="pesan">😍😍</p>
+    <button onclick="gantiUcapan()">Selanjutnya</button>
+  </div>
+
+  <script>
+    const judul = document.getElementById("judul");
+    const pesan = document.getElementById("pesan");
+
+    const ucapanList = [
+      {
+        judul: "Maaff yaa cuma bisa bikin kayak ginii",
+        pesan: "🙏🏻"
+      },
+      {
+        judul: "SELAMAT ULANG TAHUN BUAAT KAAMUUUU YANG SPESIALL",
+        pesan: "❤‍🔥🌺"
+      }
+    ];
+
+    let index = 0;
+
+    function gantiUcapan() {
+      index = (index + 1) % ucapanList.length;
+      judul.textContent = ucapanList[index].judul;
+      pesan.textContent = ucapanList[index].pesan;
+    }
+  </script>
+</body>
+</html>
